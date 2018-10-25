@@ -53,7 +53,7 @@
     <article id="page2" hidden="hidden">
         <h2 style="color:white">Products</h2>
 
-        <div class="container">
+       <!-- <div class="container">
 			<img src="images\BananaSocks.jpg" class="image"style="width:100%">
 			<div class="middle">
 			<div class="text">Banana Socks<br />$9.99</div>
@@ -63,14 +63,18 @@
 			<img src="images\TacoSocks.jpg" class="image"style="width:100%">
 			<div class="middle">
 			<div class="text">Taco Socks<br />$9.99</div>
-		</div>
-		
+		</div> -->
+		<form action="Server/Search.php" method="POST">
+        	<input type="text" placeholder="Search.." name="search">
+     		<input type="submit" value="Submit">
+    	</form>
+
 
     </article>
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
 
-        <form action="Server/Server.php">
+        <form action="Server/Server.php" method="POST">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -81,6 +85,8 @@
 		</form> 
 
     </article>
+
+    
 
 
 </body>
