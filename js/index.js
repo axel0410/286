@@ -3,7 +3,7 @@
 // author: Hong Xie
 // date: 7/10/2018
 
-var pages = ["#page1", "#page2", "#page3"];
+var pages = ["#page1", "#page2", "#page3", "#page4"];
 var curPage = pages[0];
 
 $(document).ready(function(){

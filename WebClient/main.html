@@ -100,14 +100,27 @@
   			<input type="text" name="Username">
   			<br>
   			<font color="white">Password:</font><br>
-  			<input type="Password" name="Password">
+  			<input type="Password" name="Password"><br>
+  			Click <a href="#page4">here</a> to go to create a account.
   			<br><br>
   			<input type="submit" value="Submit">
 		</form> 
 
     </article>
 
-    
+    <article id="page4" hidden="hidden"">
+        <h2 style="color:white">Sign Up</h2>
+
+        <form action="../Server/Reg.php" method="POST">
+        	Name: <br><input type="text" name="name"><br>
+        	Email: <br><input type="text" name="email"><br>
+        	UserName: <br><input type="text" name="uname"><br>
+        	Phone Number: <br><input type="text" name="number"><br>
+        	Password: <br><input type="text" name="password"><br>
+        	<input type="submit", value="Register">
+		</form> 
+
+    </article>
 
 
 </body>
