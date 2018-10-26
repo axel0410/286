@@ -29,8 +29,12 @@
 	</header>
 
 	<div class="topnav">
+<<<<<<< HEAD
   		<a href="page1"><img src="../css/logo.png" alt="Logo"></a>
 
+=======
+  		<a href="page1"><img src="../css/logo.PNG" alt="Logo"></a>
+>>>>>>> fde7e5a89f8123f32149125a8a866b28ce300f0a
  		<div class="search-container">
     		<form action="../Server/Search.php" method="POST">
       		<input type="text" placeholder="Search for clothing items..." name="search">
@@ -78,13 +82,21 @@
 			<div class="middle">
 			<div class="text">Taco Socks<br />$9.99</div>
 		</div> -->
-		<form action="Server/Search.php" method="POST">
+		<form action="../Server/Search.php" method="POST">
         	<input type="text" placeholder="Search.." name="search">
      		<input type="submit" value="Submit">
     	</form>
 
+    	<form action="/action_page.php">
+			<input type="radio" name="Socks" value="Socks"> Socks<br>
+			<input type="radio" name="Shoes" value="Shoes"> Shoes<br>
+			<input type="radio" name="Hoodies" value="Hoodies"> Hoodies<br>  
+			<input type="submit" value="Submit">
+		</form>
 
     </article>
+
+
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
 

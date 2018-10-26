@@ -27,7 +27,7 @@
 
 			echo "ProductID: ".$row[0];
 			echo "<br /> Name: ".$row[1];
-			echo '<img src="data:image/jpeg;base64,'.base64_encode($row[2]).'"/>' ;
+			echo "<br /> Image:<br /><img src=".$row[2].">";
 			echo "<br /> Quantity: ".$row[3]."<br /><br />";
 	
 		};
@@ -35,5 +35,5 @@
 	else
 		echo "Nothing entered";
 
-
+	mysqli_close($dbc);
 ?>
