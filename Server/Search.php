@@ -21,8 +21,7 @@
 	if($Searchq!=""){
 		$query="SELECT * FROM Products WHERE Name LIKE '%$Searchq%'";
 		$result=mysqli_query($dbc,$query);
-		$i=0;
-		$j=0;
+	
 		while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
 
 			echo "ProductID: ".$row[0];

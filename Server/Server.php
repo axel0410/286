@@ -30,7 +30,7 @@
 
 			if($row[5]==$UserNamep && $row[6]==$Passwordp){
 				echo "signed in!";
-				header("Location:http://ceto.murdoch.edu.au/~33173174/Assignment2/main.html#page4");
+				//header("Location:http://ceto.murdoch.edu.au/~33173174/Assignment2/WebClient/main.html#page4");
 			}
 			else
 				echo "Wrong Username or Password";
@@ -45,8 +45,4 @@
 
 
 	
-
-		
-
-
 ?>
