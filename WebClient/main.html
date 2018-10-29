@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/regcheck.js"></script>
 </head>
 
 <body>
@@ -101,7 +102,7 @@
   			<br>
   			<font color="white">Password:</font><br>
   			<input type="Password" name="Password"><br>
-  			Click <a href="#page4">here</a> to go to create a account.
+  			Click <a href="#page4">here</a> to create a account.
   			<br><br>
   			<input type="submit" value="Submit">
 		</form> 
@@ -111,14 +112,18 @@
     <article id="page4" hidden="hidden"">
         <h2 style="color:white">Sign Up</h2>
 
-        <form action="../Server/Reg.php" method="POST">
-        	Name: <br><input type="text" name="name"><br>
-        	Email: <br><input type="text" name="email"><br>
-        	UserName: <br><input type="text" name="uname"><br>
-        	Phone Number: <br><input type="text" name="number"><br>
-        	Password: <br><input type="text" name="password"><br>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+
+        <form id="form1" action="../Server/Reg.php" method="POST" onsubmit="return Validate()">
+        	Name: <br><input type="text" name="name" maxlength="25"><br>
+        	Email: <br><input type="email" name="email" maxlength="40"><br>
+        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
+        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+        	Password: <br><input type="password" name="password" maxlength="12"><br>
         	<input type="submit", value="Register">
 		</form> 
+		<button onclick="Validate()">Validate</button>
 
     </article>
 
