@@ -1,6 +1,6 @@
 <?php
 
-	
+	session_start();
 
 	if(isset($_POST["Username"])){
 		$UserNamep=$_POST["Username"];
@@ -12,18 +12,25 @@
     require_once('config.php');	
 
 	if($UserNamep!=""){
-		$query="SELECT * FROM User WHERE UserName='$UserNamep'";
+		$query="SELECT * FROM Accounts WHERE UserName='$UserNamep'";
 		$result=mysqli_query($dbc,$query);
 
 		while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
 
-			if($row[5]==$UserNamep && $row[6]==$Passwordp){
-				echo "signed in!";
-				//header("Location:http://ceto.murdoch.edu.au/~33173174/Assignment2/WebClient/main.html#page4");
+
+			if($row[3]==$UserNamep && $row[5]==$Passwordp){
+				$_SESSION['user_id'] = $row[0];
+				$_SESSION['priv'] = $row[6];
+				if($row[6]=='staff'){
+					echo "Signed in as a staff member";
+				}else{
+					echo "Signed in!";
+				}
 			}
-			else
+			else{
 				echo "Wrong Username or Password";
-		};
+			}
+		}
 	}
 	else
 		echo "No Username entered";

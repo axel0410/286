@@ -98,8 +98,19 @@
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
         <?php
-        if(isset($_SESSION['user_id'])){
-        <form action="../Server/Server.php" method="POST">
+		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff') : ?>
+
+			<form action="../Server/UserSearch.php" method="POST">
+  			<font color="white">Enter UserName to Search for the user:</font><br>
+  			<input type="text" name="usersearch">
+  			<input type="submit" value="Search">
+
+
+  		<?php endif; ?>
+  		<?php
+        if(!isset($_SESSION['user_id'])) : ?>
+
+       		 <form action="../Server/Server.php" method="POST">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -108,19 +119,21 @@
   			Click <a href="#page4">here</a> to create a account.
   			<br><br>
   			<input type="submit" value="Login">
-		</form> 
-    	}else{
-    	<p>test</p>
-    }
+			</form> 
+    	<?php else: ?>
+    		<br>
+			<form action="../Server/Logout.php">
+				<input type="submit" value="Logout"/>
+			</form>
+
+    <?php endif; ?>
 
 
     </article>
 
     <article id="page4" hidden="hidden"">
         <h2 style="color:white">Sign Up</h2>
-
-        <p id="demo"></p>
-        <p id="demo1"></p>
+        <p id="error"></p>
 
         <form id="form1" action="../Server/Reg.php" method="POST" onsubmit="return Validate()">
         	Name: <br><input type="text" name="name" maxlength="25"><br>

@@ -21,6 +21,6 @@
 	}else{
 		echo "Email aleady in use";
 	}
-
+	
 	$dbc->close();
 ?>

@@ -8,9 +8,10 @@ function Validate()
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if(this.responseText == "Valid"){
-            	document.getElementById("demo").innerHTML = this.responseText;
+            	document.getElementById("error").innerHTML = "Account Created";
+              //  window.location.replace("../WebClient/main.php#page3"); redirect to login?
             }else{
-            	document.getElementById("demo").innerHTML = this.responseText;
+            	document.getElementById("error").innerHTML = this.responseText;
             }
         }
     };
