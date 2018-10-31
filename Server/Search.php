@@ -1,7 +1,5 @@
 <?php
-//session_start();
-
-//if(isset($_SESSION['user_id'])){
+session_start();
 
 	if(isset($_GET["name"])){
 		$Searchq=$_GET["name"];
@@ -27,9 +25,5 @@
 		echo "Nothing entered";
 
 	mysqli_close($dbc);
-
-//}else{
-//	echo("Loggin to search (temp, only testing) login with user: staff, password:pass123 ");
-//}
 
 ?>

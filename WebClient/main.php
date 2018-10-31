@@ -11,23 +11,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/search.js"></script>
 <script src="../js/regcheck.js"></script>
-
-<script>
-	function getSearch() {
-           var name = document.getElementById('name').value; 
-           var xhr = new XMLHttpRequest();
-           xhr.onreadystatechange = function(){
-               if (this.readyState == 4 && this.status == 200) {
-                   document.getElementById('demo').innerHTML = this.responseText;
-               }
-           } 
-           xhr.open("GET",'../Server/Search.php?name='+name, true);
-           xhr.send();
-       }
-	
-</script>
-
 
 
 </head>
@@ -105,7 +90,7 @@
 
 
 
-		<input type="text" placeholder="Search.." id="name">
+		<input type="text" placeholder="Search.." id="search_name">
      		<button onclick="getSearch()">Search</button><br/><br/>
 		
 
@@ -128,8 +113,20 @@
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
         <?php
-        if(isset($_SESSION['user_id'])){
-        <form action="../Server/Server.php" method="POST">
+		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff') : ?>
+
+			<form action="../Server/UserSearch.php" method="POST">
+  			<font color="white">Enter UserName to Search for the user:</font><br>
+  			<input type="text" name="usersearch">
+  			<input type="submit" value="Search">
+  			
+
+
+  		<?php endif; ?>
+  		<?php
+        if(!isset($_SESSION['user_id'])) : ?>
+
+       		 <form action="../Server/Server.php" method="POST">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -138,32 +135,29 @@
   			Click <a href="#page4">here</a> to create a account.
   			<br><br>
   			<input type="submit" value="Login">
-		</form> 
-    	}else{
-    	<p>test</p>
-    }
+			</form> 
+    	<?php else: ?>
+    		<br>
+			<form action="../Server/Logout.php">
+				<input type="submit" value="Logout"/>
+			</form>
+
+    <?php endif; ?>
 
 
     </article>
 
     <article id="page4" hidden="hidden"">
         <h2 style="color:white">Sign Up</h2>
-
-        <p id="demo"></p>
-        <p id="demo1"></p>
-
-        <form id="form1" action="../Server/Reg.php" method="POST" onsubmit="return Validate()">
+        <form id="form1"">
         	Name: <br><input type="text" name="name" maxlength="25"><br>
         	Email: <br><input type="email" name="email" maxlength="40"><br>
         	UserName: <br><input type="text" name="uname" maxlength="10"><br>
         	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
         	Password: <br><input type="password" name="password" maxlength="12"><br>
-        	<input type="submit", value="Register">
 		</form> 
-		<button onclick="Validate()">Validate</button>
+		<button type="button" onclick="Validate()"> Check</button>
 
     </article>
-
-
 </body>
 </html>
