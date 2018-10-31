@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 
-if(isset($_SESSION['user_id'])){
+//if(isset($_SESSION['user_id'])){
 
 	if(isset($_POST["search"])){
 		$Searchq=$_POST["search"];
@@ -28,8 +28,8 @@ if(isset($_SESSION['user_id'])){
 
 	mysqli_close($dbc);
 
-}else{
-	echo("Loggin to search (temp, only testing) login with user: staff, password:pass123 ");
-}
+//}else{
+//	echo("Loggin to search (temp, only testing) login with user: staff, password:pass123 ");
+//}
 
 ?>
