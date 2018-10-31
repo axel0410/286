@@ -3,8 +3,8 @@
 
 //if(isset($_SESSION['user_id'])){
 
-	if(isset($_POST["search"])){
-		$Searchq=$_POST["search"];
+	if(isset($_GET["name"])){
+		$Searchq=$_GET["name"];
 	}
 	
     require_once('config.php');

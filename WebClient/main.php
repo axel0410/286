@@ -12,6 +12,24 @@
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/regcheck.js"></script>
+
+<script>
+	function getSearch() {
+           var name = document.getElementById('name').value; 
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById('demo').innerHTML = this.responseText;
+               }
+           } 
+           xhr.open("GET",'../Server/Search.php?name='+name, true);
+           xhr.send();
+       }
+	
+</script>
+
+
+
 </head>
 
 <body>
@@ -34,10 +52,11 @@
 	<div class="topnav">
   		<a href="#page1"><img src="../css/logo.PNG" alt="Logo"></a>
  		<div class="search-container">
-    		<form action="../Server/Search.php" method="POST">
-      		<input type="text" placeholder="Search for clothing items..." name="search">
-      		<button type="submit"><i class="fa fa-search"></i></button>
-    		</form>
+
+    		<input type="text" placeholder="Search for clothing items..." id="name">
+     		<button onclick="getSearch()"><i class="fa fa-search"></i><a href="http://ceto.murdoch.edu.au/~33173174/Assignment2/V3/WebClient/main.html#page2"></a></button>
+
+    		
   		</div>
 	</div>
 
@@ -80,11 +99,19 @@
 			<div class="middle">
 			<div class="text">Taco Socks<br />$9.99</div>
 		</div> -->
-		<form action="../Server/Search.php" method="POST">
-        	<input type="text" placeholder="Search.." name="search">
-     		<input type="submit" value="Submit">
-    	</form>
 
+
+
+
+
+
+		<input type="text" placeholder="Search.." id="name">
+     		<button onclick="getSearch()">Search</button><br/><br/>
+		
+
+
+
+    		    
     	<form action="../Server/Categories.php" method="POST">
 			<input type="radio" name="Category" value="Socks"> Socks<br>
 			<input type="radio" name="Category" value="Shoes"> Shoes<br>
@@ -92,25 +119,17 @@
 			<input type="submit" value="Submit">
 		</form>
 
+	<div id="demo"></div> <br/>
+
+
     </article>
 
 
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
         <?php
-		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff') : ?>
-
-			<form action="../Server/UserSearch.php" method="POST">
-  			<font color="white">Enter UserName to Search for the user:</font><br>
-  			<input type="text" name="usersearch">
-  			<input type="submit" value="Search">
-
-
-  		<?php endif; ?>
-  		<?php
-        if(!isset($_SESSION['user_id'])) : ?>
-
-       		 <form action="../Server/Server.php" method="POST">
+        if(isset($_SESSION['user_id'])){
+        <form action="../Server/Server.php" method="POST">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -119,21 +138,19 @@
   			Click <a href="#page4">here</a> to create a account.
   			<br><br>
   			<input type="submit" value="Login">
-			</form> 
-    	<?php else: ?>
-    		<br>
-			<form action="../Server/Logout.php">
-				<input type="submit" value="Logout"/>
-			</form>
-
-    <?php endif; ?>
+		</form> 
+    	}else{
+    	<p>test</p>
+    }
 
 
     </article>
 
     <article id="page4" hidden="hidden"">
         <h2 style="color:white">Sign Up</h2>
-        <p id="error"></p>
+
+        <p id="demo"></p>
+        <p id="demo1"></p>
 
         <form id="form1" action="../Server/Reg.php" method="POST" onsubmit="return Validate()">
         	Name: <br><input type="text" name="name" maxlength="25"><br>
