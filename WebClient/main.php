@@ -112,21 +112,29 @@
 
     <article id="page3" hidden="hidden"">
         <h2 style="color:white">Account</h2>
+
         <?php
-		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff') : ?>
+		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff'): ?>
 
 			<form action="../Server/UserSearch.php" method="POST">
-  			<font color="white">Enter UserName to Search for the user:</font><br>
-  			<input type="text" name="usersearch">
-  			<input type="submit" value="Search">
-  			
+  				<font color="white">Enter UserName to Search for the user:</font><br>
+  				<input type="text" name="usersearch">
+  				<input type="submit" value="Search">
+  			</form>
 
+  			<br>
+			<form action="../Server/Logout.php">
+			<input type="submit" value="Logout"/>
+			</form>
 
-  		<?php endif; ?>
-  		<?php
-        if(!isset($_SESSION['user_id'])) : ?>
+  		<?php elseif(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
+    		<br>
+			<form action="../Server/Logout.php">
+			<input type="submit" value="Logout"/>
+			</form>
 
-       		 <form action="../Server/Server.php" method="POST">
+    	<?php else: ?>
+       		<form action="../Server/Server.php" method="POST">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -136,11 +144,6 @@
   			<br><br>
   			<input type="submit" value="Login">
 			</form> 
-    	<?php else: ?>
-    		<br>
-			<form action="../Server/Logout.php">
-				<input type="submit" value="Logout"/>
-			</form>
 
     <?php endif; ?>
 
