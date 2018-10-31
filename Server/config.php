@@ -1,12 +1,12 @@
 <?php    
     $host="localhost";
-    $user="X33173174";
-    $password="X33173174";
+    $DBuser="X33173174";
+    $DBpassword="X33173174";
     $dbname="X33173174";
 
     $redirect="../WebClient/main.html";
 
-    $dbc=mysqli_connect($host,$user,$password,$dbname);
+    $dbc=mysqli_connect($host,$DBuser,$DBpassword,$dbname);
 
     if(mysqli_connect_errno()){
         echo "Failed to connect to MySQL"

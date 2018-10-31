@@ -12,7 +12,7 @@
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/search.js"></script>
-<script src="../js/regcheck.js"></script>
+<script src="../js/account.js"></script>
 
 
 </head>
@@ -123,18 +123,18 @@
   			</form>
 
   			<br>
-			<form action="../Server/Logout.php">
+			<form onsubmit="Logout()">
 			<input type="submit" value="Logout"/>
 			</form>
 
   		<?php elseif(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
-    		<br>
-			<form action="../Server/Logout.php">
+  			<br>
+			<form onsubmit="Logout()">
 			<input type="submit" value="Logout"/>
 			</form>
 
     	<?php else: ?>
-       		<form action="../Server/Server.php" method="POST">
+       		<form id="login">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
@@ -142,24 +142,23 @@
   			<input type="Password" name="Password"><br>
   			Click <a href="#page4">here</a> to create a account.
   			<br><br>
-  			<input type="submit" value="Login">
 			</form> 
+			<button type="button" onclick="Login()"> Login</button>
 
     <?php endif; ?>
-
-
     </article>
 
+    
     <article id="page4" hidden="hidden"">
         <h2 style="color:white">Sign Up</h2>
-        <form id="form1"">
+        <form id="register">
         	Name: <br><input type="text" name="name" maxlength="25"><br>
         	Email: <br><input type="email" name="email" maxlength="40"><br>
         	UserName: <br><input type="text" name="uname" maxlength="10"><br>
         	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
         	Password: <br><input type="password" name="password" maxlength="12"><br>
 		</form> 
-		<button type="button" onclick="Validate()"> Check</button>
+		<button type="button" onclick="Register()"> Register</button>
 
     </article>
 </body>

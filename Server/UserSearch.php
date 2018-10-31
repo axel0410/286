@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-    $UserName=$_POST["usersearch"];
+    $UserName=strtolower($_POST["usersearch"]);
 
     require_once('config.php');
 

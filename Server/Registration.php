@@ -1,10 +1,10 @@
 <?php
 
-	$name = strtolower($_GET['n']);
-	$emailC = strtolower($_GET['e']);
-	$userC = strtolower($_GET['u']);
-	$phone = $_GET['p'];
-	$pass = $_GET['w'];
+	$name = strtolower($_POST['n']);
+	$emailC = strtolower($_POST['e']);
+	
+	$phone = $_POST['p'];
+	$pass = $_POST['w'];
 
 	require_once('config.php');
 	
