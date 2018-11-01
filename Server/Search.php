@@ -14,15 +14,17 @@ session_start();
 	
 		while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
 
-			echo "ProductID: ".$row[0];
+			echo "<span style=color:#FFFFFF> ProductID: ".$row[0];
 			echo "<br /> Name: ".$row[1];
 			echo "<br /> Image:<br /><img src=".$row[2].">";
-			echo "<br /> Quantity: ".$row[3]."<br /><br />";
+			echo "<br /> Quantity: ".$row[3]."<br /><br /> </span>";
 	
 		};
 	}
-	else
-		echo "Nothing entered";
+	else{
+		 echo'<span style="color:#FFFFFF">Nothing Entered!</span>';
+		
+	}
 
 	mysqli_close($dbc);
 

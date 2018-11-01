@@ -39,7 +39,7 @@
  		<div class="search-container">
 
     		<input type="text" placeholder="Search for clothing items..." id="name">
-     		<button onclick="getSearch()"><i class="fa fa-search"></i><a href="http://ceto.murdoch.edu.au/~33173174/Assignment2/V3/WebClient/main.html#page2"></a></button>
+     		<button onclick="getSearch()"><i class="fa fa-search"></i><a href="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2"></a></button>
 
     		
   		</div>
@@ -89,20 +89,20 @@
 
 
 
-
+		<span style=color:#FFFFFF>Search by Name <br />
 		<input type="text" placeholder="Search.." id="search_name">
-     		<button onclick="getSearch()">Search</button><br/><br/>
+     	<button onclick="getSearch()">Search</button><br/><br/>
 		
 
 
 
-    		    
-    	<form action="../Server/Categories.php" method="POST">
-			<input type="radio" name="Category" value="Socks"> Socks<br>
-			<input type="radio" name="Category" value="Shoes"> Shoes<br>
-			<input type="radio" name="Category" value="Hoodies"> Hoodies<br>  
-			<input type="submit" value="Submit">
-		</form>
+    	Search By Category </span><br/>
+    	<select id="Categories">
+  			<option value="1">Socks</option>
+  			<option value="2">Shoes</option>
+  			<option value="3">Hoody</option>
+		</select>
+		<button onclick="getCategory()">Search</button>
 
 	<div id="demo"></div> <br/>
 
