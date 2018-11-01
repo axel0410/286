@@ -38,7 +38,7 @@
   		<a href="#page1"><img src="../css/logo.PNG" alt="Logo"></a>
  		<div class="search-container">
 
-    		<input type="text" placeholder="Search for clothing items..." id="name">
+    		<input type="text" placeholder="Search for clothing items..." id="search_name">
      		<button onclick="getSearch()"><i class="fa fa-search"></i><a href="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2"></a></button>
 
     		
