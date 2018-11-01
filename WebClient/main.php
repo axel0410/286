@@ -38,11 +38,15 @@
   		<a href="#page1"><img src="../css/logo.PNG" alt="Logo"></a>
  		<div class="search-container">
 
-    		<input type="text" placeholder="Search for clothing items..." id="search_name">
-     		<button onclick="getSearch()"><i class="fa fa-search"></i><a href="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2"></a></button>
+ 			<form action="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2">
+	    		<input type="text" placeholder="Search for clothing items..." id="search_name">
+	     		<button onclick="getSearch()"><i class="fa fa-search"></i></button>
+     		</form>
 
     		
   		</div>
+  		<a href="#page5">CART</a>
+  		
 	</div>
 
 
@@ -89,14 +93,12 @@
 
 
 
-		<span style=color:#FFFFFF>Search by Name <br />
-		<input type="text" placeholder="Search.." id="search_name">
-     	<button onclick="getSearch()">Search</button><br/><br/>
+		
 		
 
+		
 
-
-    	Search By Category </span><br/>
+    	<span style=color:#FFFFFF>Search By Category </span><br/>
     	<select id="Categories">
   			<option value="1">Socks</option>
   			<option value="2">Shoes</option>
@@ -161,5 +163,26 @@
 		<button type="button" onclick="Register()"> Register</button>
 
     </article>
+
+
+    <article id="page5" hidden="hidden"">
+        <h2 style="color:white">CART</h2>
+
+        <form action="#page6">
+	     	<button onclick="Buy()">Buy</button>
+     	</form>
+
+        <H3 style="color:white">Items:</H3> 
+        <div id="cart"></div> <br/>
+    </article>
+
+
+    <article id="page6" hidden="hidden"">
+        <h2 style="color:white">Checkout</h2>
+		
+
+        <div id="Bought"></div> <br/>
+    </article>
+
 </body>
 </html>
