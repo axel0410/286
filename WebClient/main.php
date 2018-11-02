@@ -90,9 +90,7 @@
 			<div class="middle">
 			<div class="text">Taco Socks<br />$9.99</div>
 		</div> -->
-<<<<<<< HEAD
 
-=======
  
 
 
@@ -103,7 +101,6 @@
 
 		
 	<div id="cat" align="center">
->>>>>>> 9a0c9f8f1672b5cf284e2e85c30b9e316b85ace5
     	<span style=color:#FFFFFF>Search By Category </span><br/>
     	<select id="Categories">
   			<option value="1">Socks</option>
@@ -138,32 +135,33 @@
 
   		<?php elseif(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
 
+  	<div align="center" style="color:white">
         <form id="editName">
         	Update Name: <br><input type="text" name="name" maxlength="25"><br>
 		</form> 
-		<button type="button" onclick="updateName()"> Update</button>
+		<button type="button" onclick="updateName()"> Update</button><br><br>
 
 		<form id="editEmail">
         	Update Email: <br><input type="email" name="email" maxlength="40"><br>
 		</form>
-		<button type="button" onclick="updateEmail()"> Update</button>
+		<button type="button" onclick="updateEmail()"> Update</button><br><br>
 
 		<form id="editPhone">
         	Update Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
         	</form>
-        <button type="button" onclick="updatePhone()"> Update</button>
+        <button type="button" onclick="updatePhone()"> Update</button><br><br>
         
 		<form id="editPass">
         	Update Password: <br><input type="password" name="password" maxlength="12"><br>
 		</form> 
-		<button type="button" onclick="updatePass()"> Update</button>
-
+		<button type="button" onclick="updatePass()"> Update</button><br>
+		
   		<br>
   		<br>
 		<form onsubmit="Logout()">
 		<input type="submit" value="Logout"/>
 		</form>
-
+	</div>
     	<?php else: ?>
        		<form id="login">
   			<font color="white">Username:</font><br>
@@ -201,7 +199,7 @@
 		     	<button onclick="Buy()">Buy</button>
 	     	</form>
 
-	     	<button onclick="Clear()">Clear Cart</button>
+	     	<button onclick="Clear()">Clear Cart <i class="fa fa-trash"></i></button>
 	     	<script>
 	     		function Clear(){
 			        cartArray=[];
@@ -223,7 +221,7 @@
 
     <article id="page7" hidden="hidden">
         <h2 style="color:white">Help</h2>
-        
+        <p>Unregistered users can only browse products. Although they can register on the account page to become a registered user who can buy products. <br /> To buy products a user can search, then press "Add to Cart" which will add the product to the cart. Then press the cart button to see what you have. If you don't like what you selected you can clear the cart here. If you are happy with your products, you can click the "Buy" button, which will take you to the checkout where some information is displayed about the products you bought and if the order was accepted or rejected</p>
         <div id="help"></div> <br/>
     </article>
 
