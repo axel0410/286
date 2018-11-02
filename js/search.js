@@ -42,7 +42,6 @@ function AddCart(product){
 function Buy(){
               if(cartArray.length>0){
                 var i;
-                
                 for(i=0;i<cartArray.length;i++){
                    var name=cartArray[i];
                    var xhr = new XMLHttpRequest();
@@ -56,5 +55,8 @@ function Buy(){
                 }
                 
               }
+              cartArray=[];
+              document.getElementById('Bought').innerHTML ="";
+              document.getElementById('cart').innerHTML ="";
       }
 

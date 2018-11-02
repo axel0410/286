@@ -63,7 +63,7 @@
 					Company Mission: To sell outstanding products<br />
 					Ethos: To provide the best customer service and best clothing to all our customers, no matter how many limbs
 					<br />
-					Historical Glory: We have sold clothes to over 1,000,000 countries and people say they‚Äôre ‚Äúnot the best, but not the worst!‚Äù
+					Historical Glory: We have sold clothes to over 1,000,000 countries and people say theyíre ìnot the best, but not the worst!î
 					<br />
 					Charitable Support Given to the Local Community: Donated clothes to people in need during the recent sharknado, we also support our local monkey bar club with top of the line socks! We even donated $5 to the United States Government 
 					<br />
