@@ -28,6 +28,97 @@ function Register()
 }
 //document.getElementById("error").innerHTML = this.responseText;
 
+function updateName(){
+    var formdata = document.getElementById("editName");
+    var name = formdata.elements[0].value;
+
+    var data ='n='+name;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Updated"){
+                window.alert("You have updated your Name");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/detailUpdate/updateName.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);   
+}
+
+function updateEmail(){
+    var formdata = document.getElementById("editEmail");
+    var email = formdata.elements[0].value;
+
+    var data ='e='+email;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Updated"){
+                window.alert("You have updated your Email");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/detailUpdate/updateEmail.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);   
+}
+
+
+function updatePhone(){
+    var formdata = document.getElementById("editPhone");
+    var phone = formdata.elements[0].value;
+
+    var data ='ph='+phone;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Updated"){
+                window.alert("You have updated your Phone number");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/detailUpdate/updatePhone.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);   
+}
+
+
+function updatePass(){
+    var formdata = document.getElementById("editPass");
+    var pass = formdata.elements[0].value;
+
+    var data ='p='+pass;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Updated"){
+                window.alert("You have updated your Password");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/detailUpdate/updatePass.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data); 
+}
+
+
 function Login(){
 
     var formdata = document.getElementById("login");

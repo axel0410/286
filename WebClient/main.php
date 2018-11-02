@@ -38,7 +38,7 @@
   		<a href="#page1"><img src="../css/logo.PNG" alt="Logo"></a>
  		<div class="search-container">
 
- 			<form action="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2">
+ 			<form action="#page2">
 	    		<input type="text" placeholder="Search for clothing items..." id="search_name">
 	     		<button onclick="getSearch()"><i class="fa fa-search"></i></button>
      		</form>
@@ -89,15 +89,6 @@
 			<div class="text">Taco Socks<br />$9.99</div>
 		</div> -->
 
-
-
-
-
-		
-		
-
-		
-
     	<span style=color:#FFFFFF>Search By Category </span><br/>
     	<select id="Categories">
   			<option value="1">Socks</option>
@@ -112,7 +103,7 @@
     </article>
 
 
-    <article id="page3" hidden="hidden"">
+    <article id="page3" hidden="hidden">
         <h2 style="color:white">Account</h2>
 
         <?php
@@ -130,10 +121,32 @@
 			</form>
 
   		<?php elseif(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
-  			<br>
-			<form onsubmit="Logout()">
-			<input type="submit" value="Logout"/>
-			</form>
+
+        <form id="editName">
+        	Update Name: <br><input type="text" name="name" maxlength="25"><br>
+		</form> 
+		<button type="button" onclick="updateName()"> Update</button>
+
+		<form id="editEmail">
+        	Update Email: <br><input type="email" name="email" maxlength="40"><br>
+		</form>
+		<button type="button" onclick="updateEmail()"> Update</button>
+
+		<form id="editPhone">
+        	Update Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+        	</form>
+        <button type="button" onclick="updatePhone()"> Update</button>
+        
+		<form id="editPass">
+        	Update Password: <br><input type="password" name="password" maxlength="12"><br>
+		</form> 
+		<button type="button" onclick="updatePass()"> Update</button>
+
+  		<br>
+  		<br>
+		<form onsubmit="Logout()">
+		<input type="submit" value="Logout"/>
+		</form>
 
     	<?php else: ?>
        		<form id="login">
@@ -165,7 +178,7 @@
     </article>
 
 
-    <article id="page5" hidden="hidden"">
+    <article id="page5" hidden="hidden">
         <h2 style="color:white">CART</h2>
 
         <form action="#page6">
@@ -185,7 +198,7 @@
     </article>
 
 
-    <article id="page6" hidden="hidden"">
+    <article id="page6" hidden="hidden">
         <h2 style="color:white">Checkout</h2>
         
         <div id="Bought"></div> <br/>
