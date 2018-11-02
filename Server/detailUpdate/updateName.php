@@ -7,7 +7,9 @@
 	
 	$sql="UPDATE Accounts SET Name = '$name' WHERE ID = $ID";
 
-	if(mysqli_query($dbc, $sql)){
+    if(strlen($name)<4){
+    	echo "Name must be greater than 3 characters";
+    }elseif(mysqli_query($dbc, $sql)){
 		echo "Updated";
 	}else{
 		echo mysqli_error($dbc);

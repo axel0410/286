@@ -7,7 +7,8 @@ function Register()
     var user = formdata.elements[2].value;
     var phone = formdata.elements[3].value;
     var pass = formdata.elements[4].value;
-    var data = 'n='+name+'&e='+email+'&u='+user+'&p='+phone+'&w='+pass;
+    var priv = formdata.elements[5].value;
+    var data = 'n='+name+'&e='+email+'&u='+user+'&p='+phone+'&w='+pass+'&pr='+priv;
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
@@ -26,7 +27,23 @@ function Register()
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(data);   
 }
-//document.getElementById("error").innerHTML = this.responseText;
+
+function userSearch(){
+    var formdata = document.getElementById("userSearch");
+    var user = formdata.elements[0].value;
+    var data = 'u='+user;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("userInfo").style.display = "block";
+            document.getElementById("userInfo").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open('POST', '../Server/UserSearch.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);   
+}
 
 function updateName(){
     var formdata = document.getElementById("editName");
@@ -157,4 +174,29 @@ function Logout(){
     };
     xmlhttp.open('GET', '../Server/Logout.php?', true);
     xmlhttp.send();   
+}
+
+function ProductUpdate(){
+    var formdata = document.getElementById("products");
+    var proName = formdata.elements[0].value;
+    var proQuantity = formdata.elements[1].value;
+
+    var data = 'n='+proName+'&q='+proQuantity;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Created"){
+                window.alert("Created");
+            }else if(this.responseText == "Updated"){
+                window.alert("Updated");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/ProductUpdate.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);  
 }

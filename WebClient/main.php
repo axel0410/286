@@ -122,13 +122,39 @@
         <?php
 		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff'): ?>
 
-			<form action="../Server/UserSearch.php" method="POST">
+			<form id="userSearch">
   				<font color="white">Enter UserName to Search for the user:</font><br>
   				<input type="text" name="usersearch">
-  				<input type="submit" value="Search">
   			</form>
+  			<button type="button" onclick="userSearch()"> Search</button>
+  			<br><br>
+  			<div id="userInfo" hidden></div>
+  			<br><br>
+        <form id="register">
+        	Name: <br><input type="text" name="name" maxlength="25"><br>
+        	Email: <br><input type="email" name="email" maxlength="40"><br>
+        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
+        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+        	Password: <br><input type="password" name="password" maxlength="12"><br>
+        	Account Privilege:<br>
+			<select>
+ 			<option value="customer">customer</option>
+ 			<option value="staff">staff</option>
+			</select>
+			<br><br>
+			<button type="reset" value="Reset">Reset Form</button>
+		</form> 
+		<button type="button" onclick="Register()"> Register</button>
+		<br><br>
 
-  			<br>
+		<form id="products">
+  			<font color="white">Add New Product or Update Existing (to update enter the products name to update then enter the new Quantity)</font><br>
+  			Product Name: <input type="text" name="productName">
+  			Product Quantity: <input type="text" name="productQuantity">
+  		</form>
+  			<button type="button" onclick="ProductUpdate()"> Update Products</button>
+
+  			<br><br>
 			<form onsubmit="Logout()">
 			<input type="submit" value="Logout"/>
 			</form>
@@ -137,22 +163,22 @@
 
   	<div align="center" style="color:white">
         <form id="editName">
-        	Update Name: <br><input type="text" name="name" maxlength="25"><br>
+        	Update Name: <br><input type="text" name="name" maxlength="25" minlength="4"><br>
 		</form> 
 		<button type="button" onclick="updateName()"> Update</button><br><br>
 
 		<form id="editEmail">
-        	Update Email: <br><input type="email" name="email" maxlength="40"><br>
+        	Update Email: <br><input type="email" name="email" maxlength="40" minlength="4"><br>
 		</form>
 		<button type="button" onclick="updateEmail()"> Update</button><br><br>
 
 		<form id="editPhone">
-        	Update Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+        	Update Phone Number: <br><input type="tel" name="number" maxlength="14" minlength="8"><br>
         	</form>
         <button type="button" onclick="updatePhone()"> Update</button><br><br>
         
 		<form id="editPass">
-        	Update Password: <br><input type="password" name="password" maxlength="12"><br>
+        	Update Password: <br><input type="password" name="password" maxlength="12" minlength="4"><br>
 		</form> 
 		<button type="button" onclick="updatePass()"> Update</button><br>
 		
@@ -187,6 +213,7 @@
         	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
         	Password: <br><input type="password" name="password" maxlength="12"><br>
 		</form> 
+		<br>
 		<button type="button" onclick="Register()"> Register</button>
 
     </article>

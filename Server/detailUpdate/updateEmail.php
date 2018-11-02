@@ -10,7 +10,10 @@
 	
 	$sql="UPDATE Accounts SET Email = '$email' WHERE ID = $ID";
 
-	if($returned->num_rows==0){
+
+	if(strlen($email)<1){
+    	echo "Invalid email";
+    }elseif($returned->num_rows==0){
 		if(mysqli_query($dbc, $sql)){
 			echo "Updated";
 		}else{

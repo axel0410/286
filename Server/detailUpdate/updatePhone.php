@@ -7,7 +7,10 @@
 	
 	$sql="UPDATE Accounts SET PhoneNum = '$phone' WHERE ID = $ID";
 
-	if(mysqli_query($dbc, $sql)){
+
+    if(strlen($phone)<8){
+    	echo "Phone number must be greater than 7 characters";
+	}elseif(mysqli_query($dbc, $sql)){
 		echo "Updated";
 	}else{
 		echo mysqli_error($dbc);
