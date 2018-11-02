@@ -16,7 +16,7 @@ session_start();
 			$ID=$row[0];
 			echo "<span style=color:#FFFFFF> ProductID: ".$row[0];
 			echo "<br /> Name: ".$row[1];
-			echo "<br /> Image:<br /><img src=".$row[2].">";
+			echo "<br /> Image:<br /><img src=".$row[2]." height=200 width=200>";
 			echo "<br /> Quantity: ".$row[3]."<br /> </span>";
 			echo "<button onclick=AddCart(".$ID.")>Add To Cart</button><br/><br />";
 	

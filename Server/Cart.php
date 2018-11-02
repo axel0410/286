@@ -15,7 +15,7 @@ session_start();
 	while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
 		echo "<span style=color:#FFFFFF>";
 		echo "<br /> Name: ".$row[1];
-		echo "<br /><img src=".$row[2]."></span>";
+		echo "<br /><img src=".$row[2]." height=200 width=200></span>";
 		
 	
 	};

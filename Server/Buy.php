@@ -27,7 +27,7 @@ session_start();
 				echo "<span style=color:#FFFFFF>";
 				echo "<br /> Name: ".$row[1];
 				echo "<br />New Quantity: ".$row[3];".</span>";	
-				echo "<br />Success";
+				echo "<br />Order Accepted";
 			};
 
 		}
@@ -36,7 +36,7 @@ session_start();
 				echo "<span style=color:#FFFFFF>";
 				echo "<br /> Name: ".$row[1];
 				echo "<br />New Quantity: ".$row[3];".</span>";	
-				echo "<br />Failed";
+				echo "<br />Order Rejected(out of Stock)";
 			};
 		
 	};
