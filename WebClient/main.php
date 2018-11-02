@@ -28,6 +28,7 @@
 					<li><a href="page1">About</a></li>
 					<li><a href="page2">Products</a></li>
 					<li><a href="page3">Account</a></li>
+					<li><a href="page7">Help</a></li>
 				</ul>
 			</nav>
 
@@ -38,15 +39,16 @@
   		<a href="#page1"><img src="../css/logo.PNG" alt="Logo"></a>
  		<div class="search-container">
 
- 			<form action="http://ceto.murdoch.edu.au/~33173174/Assignment2/V4/WebClient/main.php#page2">
+ 			<form action="#page2">
 	    		<input type="text" placeholder="Search for clothing items..." id="search_name">
 	     		<button onclick="getSearch()"><i class="fa fa-search"></i></button>
      		</form>
 
-    		
+    		<form action="#page5">
+  				<button><i class="fa fa-truck"></i>CART</button>
+  			</form>
   		</div>
-  		<a href="#page5">CART</a>
-  		
+
 	</div>
 
 
@@ -88,7 +90,7 @@
 			<div class="middle">
 			<div class="text">Taco Socks<br />$9.99</div>
 		</div> -->
-
+ 
 
 
 
@@ -97,7 +99,7 @@
 		
 
 		
-
+	<div id="cat" align="center">
     	<span style=color:#FFFFFF>Search By Category </span><br/>
     	<select id="Categories">
   			<option value="1">Socks</option>
@@ -105,8 +107,9 @@
   			<option value="3">Hoody</option>
 		</select>
 		<button onclick="getCategory()">Search</button>
+	</div>
 
-	<div id="demo"></div> <br/>
+	<div id="demo" align="center"></div> <br/>
 
 
     </article>
@@ -151,7 +154,7 @@
     </article>
 
     
-    <article id="page4" hidden="hidden"">
+    <article id="page4" hidden="hidden">
         <h2 style="color:white">Sign Up</h2>
         <form id="register">
         	Name: <br><input type="text" name="name" maxlength="25"><br>
@@ -165,30 +168,37 @@
     </article>
 
 
-    <article id="page5" hidden="hidden"">
+    <article id="page5" hidden="hidden">
         <h2 style="color:white">CART</h2>
+        <div align="center">
+	        <form action="#page6">
+		     	<button onclick="Buy()">Buy</button>
+	     	</form>
 
-        <form action="#page6">
-	     	<button onclick="Buy()">Buy</button>
-     	</form>
+	     	<button onclick="Clear()">Clear Cart</button>
+	     	<script>
+	     		function Clear(){
+			        cartArray=[];
+			        document.getElementById('cart').innerHTML ="";
+	      		}
+	     	</script>
 
-     	<button onclick="Clear()">Clear Cart</button>
-     	<script>
-     		function Clear(){
-		        cartArray=[];
-		        document.getElementById('cart').innerHTML ="";
-      		}
-     	</script>
-
-        <H3 style="color:white">Items:</H3> 
-        <div id="cart"></div> <br/>
+	        <H3 style="color:white">Items:</H3> 
+	        <div id="cart"></div> <br/>
+	    </div>
     </article>
 
 
-    <article id="page6" hidden="hidden"">
+    <article id="page6" hidden="hidden">
         <h2 style="color:white">Checkout</h2>
         
-        <div id="Bought"></div> <br/>
+        <div id="Bought" align="center"></div> <br/>
+    </article>
+
+    <article id="page7" hidden="hidden">
+        <h2 style="color:white">Help</h2>
+        
+        <div id="help"></div> <br/>
     </article>
 
 </body>

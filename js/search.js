@@ -53,8 +53,8 @@ function Buy(){
                    xhr.open("GET",'../Server/Buy.php?name='+name, true);
                    xhr.send();
                 }
-                
               }
+              
               cartArray=[];
               document.getElementById('Bought').innerHTML ="";
               document.getElementById('cart').innerHTML ="";
