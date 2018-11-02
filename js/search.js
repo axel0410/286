@@ -40,19 +40,21 @@ function AddCart(product){
 }
 
 function Buy(){
-      if(cartArray.length>0){
-        var i;
-        for(i=0;i<cartArray.length;i++){
-           var name=cartArray[i];
-           var xhr = new XMLHttpRequest();
-           xhr.onreadystatechange = function(){
-               if (this.readyState == 4 && this.status == 200) {
-                   document.getElementById('Bought').innerHTML = document.getElementById('Bought').innerHTML+this.responseText;
-               }
-           } 
-           xhr.open("GET",'../Server/Buy.php?name='+name, true);
-           xhr.send();
-        }
+              if(cartArray.length>0){
+                var i;
+                
+                for(i=0;i<cartArray.length;i++){
+                   var name=cartArray[i];
+                   var xhr = new XMLHttpRequest();
+                   xhr.onreadystatechange = function(){
+                       if (this.readyState == 4 && this.status == 200) {
+                          document.getElementById('Bought').innerHTML = document.getElementById('Bought').innerHTML+this.responseText+"<br />";
+                       }
+                   } 
+                   xhr.open("GET",'../Server/Buy.php?name='+name, true);
+                   xhr.send();
+                }
+                
+              }
       }
-      
-}
+

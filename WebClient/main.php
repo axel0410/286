@@ -172,6 +172,14 @@
 	     	<button onclick="Buy()">Buy</button>
      	</form>
 
+     	<button onclick="Clear()">Clear Cart</button>
+     	<script>
+     		function Clear(){
+		        cartArray=[];
+		        document.getElementById('cart').innerHTML ="";
+      		}
+     	</script>
+
         <H3 style="color:white">Items:</H3> 
         <div id="cart"></div> <br/>
     </article>
@@ -179,8 +187,7 @@
 
     <article id="page6" hidden="hidden"">
         <h2 style="color:white">Checkout</h2>
-		
-
+        
         <div id="Bought"></div> <br/>
     </article>
 
