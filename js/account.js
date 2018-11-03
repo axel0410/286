@@ -1,17 +1,22 @@
 function Register()
 {
-
-    var formdata = document.getElementById("register");
+	var formdata;
+	if(document.getElementById("register1")!=null){
+		formdata=document.getElementById("register1");
+	}else if(document.getElementById("register2")!=null){
+		formdata=document.getElementById("register2");
+	}
 
     var name = formdata.elements[0].value;
     var email = formdata.elements[1].value;
     var user = formdata.elements[2].value;
     var phone = formdata.elements[3].value;
     var pass = formdata.elements[4].value;
+    var priv;
     if(formdata.elements.length==6){
-    	var priv =formdata.elements[5].value;
+    	priv =formdata.elements[5].value;
     }else{
-    	var priv=null;
+    	priv=null;
     }
  
     var data = 'n='+name+'&e='+email+'&u='+user+'&p='+phone+'&w='+pass+'&pr='+priv;

@@ -130,7 +130,7 @@
 	  			<br><br>
 	  			<div id="userInfo" hidden></div>
 	  			<br><br>
-	        <form id="register">
+	        <form id="register1">
 	        	<font color="white">Name: <br><input type="text" name="name" maxlength="25"><br>
 	        	Email: <br><input type="email" name="email" maxlength="40"><br>
 	        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
@@ -218,8 +218,9 @@
     <article id="page4" hidden="hidden">
         <h2 style="color:white">Sign Up</h2>
         <div align="center">
-	        <form id="register">
-	        	<font color="white">Name: <br><input type="text" name="name" maxlength="25"><br>
+	        <form id="register2">
+	        	<font color="white">
+	        	Name: <br><input type="text" name="name" maxlength="25"><br>
 	        	Email: <br><input type="email" name="email" maxlength="40"><br>
 	        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
 	        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>

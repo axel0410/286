@@ -7,9 +7,8 @@
 	$phone = $_POST['p'];
 	$pass = $_POST['w'];
 
-	if($_POST['pr']==NULL){
-		$priv='customer';
-	}elseif($_POST['pr']=='staff' && $_SESSION['priv']=='staff'){
+
+	if($_POST['pr']=='staff' && $_SESSION['priv']=='staff'){
 		$priv='staff';
 	}else{
 		$priv='customer';
