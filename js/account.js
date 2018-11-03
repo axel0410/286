@@ -21,13 +21,7 @@ function Register()
         if (this.readyState == 4 && this.status == 200) {
             if(this.responseText == "Valid"){
                 window.alert("Account Created");
-<<<<<<< HEAD
-
-                //window.location.replace("#page3"); 
-=======
                 window.location.replace("#page3"); 
->>>>>>> 6a0fffc1804d58fa80364dc9a15ab573d5ff2f07
-                
             }else{
                 window.alert(this.responseText);
             }
