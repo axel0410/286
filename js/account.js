@@ -1,5 +1,6 @@
 function Register()
 {
+
     var formdata = document.getElementById("register");
 
     var name = formdata.elements[0].value;
@@ -7,7 +8,12 @@ function Register()
     var user = formdata.elements[2].value;
     var phone = formdata.elements[3].value;
     var pass = formdata.elements[4].value;
-    var priv = formdata.elements[5].value;
+    if(formdata.elements.length==6){
+    	var priv =formdata.elements[5].value;
+    }else{
+    	var priv=null;
+    }
+ 
     var data = 'n='+name+'&e='+email+'&u='+user+'&p='+phone+'&w='+pass+'&pr='+priv;
     var xmlhttp = new XMLHttpRequest();
 
@@ -15,6 +21,7 @@ function Register()
         if (this.readyState == 4 && this.status == 200) {
             if(this.responseText == "Valid"){
                 window.alert("Account Created");
+
                 //window.location.replace("#page3"); 
                 
             }else{
