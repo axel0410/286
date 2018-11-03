@@ -11,7 +11,7 @@
     $user = $data->fetch_assoc();
     if($_SESSION['priv']=='staff'){
         if($user != NULL){
-            $info= "Account ID: " . $user["ID"] . "<br>Name: " .$user["Name"] . "<br>Email: " . $user["Email"] . "<br>UserName: " . $UserName . "<br>Phone Number: " .  $user["PhoneNum"] . "<br>Privilege: " . $user["Privilege"];
+            $info= "<font color=white>Account ID: " . $user["ID"] . "<br>Name: " .$user["Name"] . "<br>Email: " . $user["Email"] . "<br>UserName: " . $UserName . "<br>Phone Number: " .  $user["PhoneNum"] . "<br>Privilege: " . $user["Privilege"]."</font>";
             echo $info;
         }else {
             echo "No Account with that UserName";

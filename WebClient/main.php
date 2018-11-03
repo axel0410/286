@@ -121,43 +121,53 @@
 
         <?php
 		if(isset($_SESSION['user_id']) && $_SESSION['priv']=='staff'): ?>
+			<div align="center">
+				<form id="userSearch">
+	  				<font color="white">Enter UserName to Search for the user:</font><br>
+	  				<input type="text" name="usersearch">
+	  			</form>
+	  			<button type="button" onclick="userSearch()"> Search</button>
+	  			<br><br>
+	  			<div id="userInfo" hidden></div>
+	  			<br><br>
+	        <form id="register">
+	        	<font color="white">Name: <br><input type="text" name="name" maxlength="25"><br>
+	        	Email: <br><input type="email" name="email" maxlength="40"><br>
+	        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
+	        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+	        	Password: <br><input type="password" name="password" maxlength="12"><br>
+	        	Account Privilege:<br>
+				<select>
+	 			<option value="customer">customer</option>
+	 			<option value="staff">staff</option>
+				</select>
+				<br><br>
+				<button type="reset" value="Reset">Reset Form</button>
+			</form> 
+			<button type="button" onclick="Register()"> Register</button>
+			<br><br><br>
 
-			<form id="userSearch">
-  				<font color="white">Enter UserName to Search for the user:</font><br>
-  				<input type="text" name="usersearch">
-  			</form>
-  			<button type="button" onclick="userSearch()"> Search</button>
-  			<br><br>
-  			<div id="userInfo" hidden></div>
-  			<br><br>
-        <form id="register">
-        	Name: <br><input type="text" name="name" maxlength="25"><br>
-        	Email: <br><input type="email" name="email" maxlength="40"><br>
-        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
-        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
-        	Password: <br><input type="password" name="password" maxlength="12"><br>
-        	Account Privilege:<br>
-			<select>
- 			<option value="customer">customer</option>
- 			<option value="staff">staff</option>
-			</select>
-			<br><br>
-			<button type="reset" value="Reset">Reset Form</button>
-		</form> 
-		<button type="button" onclick="Register()"> Register</button>
-		<br><br>
+			<form id="products">
+	  			<font color="white">Add New Product or Update Existing (to update enter the products name to update then enter the new Quantity)</font><br>
+	  			Product Name: <input type="text" name="productName"><br/>
+	  			Product Quantity: <input type="text" name="productQuantity"><br/>
+	  		
+	  		</form>
 
-		<form id="products">
-  			<font color="white">Add New Product or Update Existing (to update enter the products name to update then enter the new Quantity)</font><br>
-  			Product Name: <input type="text" name="productName">
-  			Product Quantity: <input type="text" name="productQuantity">
-  		</form>
-  			<button type="button" onclick="ProductUpdate()"> Update Products</button>
+	  		<button type="button" onclick="ProductUpdate()"> Update Products</button><br/><br/>
 
-  			<br><br>
-			<form onsubmit="Logout()">
-			<input type="submit" value="Logout"/>
-			</form>
+	  		<form id=delete>
+	  			Delete Product(Enter product name to delete)</font><br/>
+	  			<input type="text" name="productNametoDelete"><br/>
+	  			<button type="button" onclick="DeleteProduct()"> Delete Product</button><br/>
+	  		</form>
+
+	  		
+	  			<br><br>
+				<form onsubmit="Logout()">
+				<input type="submit" value="Logout"/>
+				</form>
+			</div>
 
   		<?php elseif(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
 
@@ -189,32 +199,35 @@
 		</form>
 	</div>
     	<?php else: ?>
+    		<div align="center">
        		<form id="login">
   			<font color="white">Username:</font><br>
   			<input type="text" name="Username">
   			<br>
-  			<font color="white">Password:</font><br>
+  			<font color="white">Password:<br>
   			<input type="Password" name="Password"><br>
-  			Click <a href="#page4">here</a> to create a account.
+  			Click <a href="#page4">here</a> to create a account.</font>
   			<br><br>
 			</form> 
 			<button type="button" onclick="Login()"> Login</button>
-
+		</div>
     <?php endif; ?>
     </article>
 
     
     <article id="page4" hidden="hidden">
         <h2 style="color:white">Sign Up</h2>
-        <form id="register">
-        	Name: <br><input type="text" name="name" maxlength="25"><br>
-        	Email: <br><input type="email" name="email" maxlength="40"><br>
-        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
-        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
-        	Password: <br><input type="password" name="password" maxlength="12"><br>
-		</form> 
-		<br>
-		<button type="button" onclick="Register()"> Register</button>
+        <div align="center">
+	        <form id="register">
+	        	<font color="white">Name: <br><input type="text" name="name" maxlength="25"><br>
+	        	Email: <br><input type="email" name="email" maxlength="40"><br>
+	        	UserName: <br><input type="text" name="uname" maxlength="10"><br>
+	        	Phone Number: <br><input type="tel" name="number" maxlength="14"><br>
+	        	Password: <br><input type="password" name="password" maxlength="12"><br></font>
+			</form> 
+			<br>
+			<button type="button" onclick="Register()"> Register</button>
+		</div>
 
     </article>
 

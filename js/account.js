@@ -15,7 +15,7 @@ function Register()
         if (this.readyState == 4 && this.status == 200) {
             if(this.responseText == "Valid"){
                 window.alert("Account Created");
-                window.location.replace("../WebClient/main.php#page3"); 
+                //window.location.replace("#page3"); 
                 
             }else{
                 window.alert(this.responseText);
@@ -27,6 +27,8 @@ function Register()
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(data);   
 }
+
+
 
 function userSearch(){
     var formdata = document.getElementById("userSearch");
@@ -199,4 +201,27 @@ function ProductUpdate(){
     xmlhttp.open('POST', '../Server/ProductUpdate.php', true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(data);  
+}
+
+function DeleteProduct(){
+    var formdata = document.getElementById("delete");
+    var proName = formdata.elements[0].value;
+
+    var xmlhttp = new XMLHttpRequest();
+
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == "Deleted"){
+                window.alert("Deleted");
+            }else{
+                window.alert(this.responseText);
+            }
+        }
+    };
+
+    xmlhttp.open('POST', '../Server/ProductDelete.php', true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(data);  
+
 }

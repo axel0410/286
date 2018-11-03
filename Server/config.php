@@ -4,7 +4,7 @@
     $DBpassword="X33173174";
     $dbname="X33173174";
 
-    $redirect="../WebClient/main.html";
+    $redirect="#page1";
 
     $dbc=mysqli_connect($host,$DBuser,$DBpassword,$dbname);
 
