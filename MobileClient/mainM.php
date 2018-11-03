@@ -196,7 +196,7 @@ function closeSidebar() {
         </form>
         <button type="button" onclick="userSearch()"> Search</button>
         <br><br>
-        <div id="userInfo" hidden></div>
+        <div id="userInfo" style="background-color:grey" hidden></div>
         <br><br>
         <form id="register">
           Name: <br><input type="text" name="name" maxlength="25"><br>
