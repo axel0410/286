@@ -15,7 +15,7 @@ function Register()
         if (this.readyState == 4 && this.status == 200) {
             if(this.responseText == "Valid"){
                 window.alert("Account Created");
-                //window.location.replace("#page3"); 
+                window.location.replace("#page3"); 
                 
             }else{
                 window.alert(this.responseText);
