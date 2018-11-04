@@ -160,7 +160,9 @@ function closeSidebar() {
         <h2>CART</h2>
         <div align="center">
           <form action="#page6">
+          <?php if(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
           <button onclick="Buy()">Buy</button>
+         <?php endif; ?>
         </form>
 
         <button onclick="Clear()">Clear Cart <i class="fa fa-trash"></i></button>
@@ -221,6 +223,14 @@ function closeSidebar() {
         Product Quantity: <input type="text" name="productQuantity">
       </form>
         <button type="button" onclick="ProductUpdate()"> Update Products</button>
+
+
+        <form id="delete1">
+          Delete Product(Enter product name to delete)</font><br/>
+          <input type="text" name="productNametoDelete"><br/>
+          <button type="button" onclick="DeleteProduct()"> Delete Product</button><br/>
+        </form>
+        
 
         <br><br>
       <form onsubmit="Logout()">
