@@ -214,19 +214,16 @@ function ProductUpdate(){
 }
 
 function DeleteProduct(){
-    var formdata = document.getElementById("delete");
-    var proName = formdata.elements[0].value;
+    
+    var formdata = document.getElementById("delete1");
+    var proDelete = formdata.elements[0].value;
 
+    var data = 'd='+ proDelete;
     var xmlhttp = new XMLHttpRequest();
-
 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == "Deleted"){
-                window.alert("Deleted");
-            }else{
-                window.alert(this.responseText);
-            }
+            window.alert(this.responseText);
         }
     };
 

@@ -156,7 +156,7 @@
 
 	  		<button type="button" onclick="ProductUpdate()"> Update Products</button><br/><br/>
 
-	  		<form id=delete>
+	  		<form id="delete1">
 	  			Delete Product(Enter product name to delete)</font><br/>
 	  			<input type="text" name="productNametoDelete"><br/>
 	  			<button type="button" onclick="DeleteProduct()"> Delete Product</button><br/>
@@ -237,7 +237,9 @@
         <h2 style="color:white">CART</h2>
         <div align="center">
 	        <form action="#page6">
+	        <?php if(isset($_SESSION['user_id']) && $_SESSION['priv']=='customer'): ?>
 		     	<button onclick="Buy()">Buy</button>
+		     <?php endif; ?>
 	     	</form>
 
 	     	<button onclick="Clear()">Clear Cart <i class="fa fa-trash"></i></button>
